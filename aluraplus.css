@@ -1,3 +1,6 @@
+/* =========================================
+   1. Variáveis e Reset Global
+   ========================================= */
 :root {
     --branco-principal: #FFFFFF;
     --cinza-secundario: #C0C0C0;
@@ -19,6 +22,9 @@ body {
     min-height: 100vh;
 }
 
+/* =========================================
+   2. Layout Principal
+   ========================================= */
 .container {
     min-height: 100vh;
     display: flex;
@@ -27,11 +33,7 @@ body {
     gap: 4rem;
     padding: 4rem 8%;
 }
-.container { 
-height: 100vh; 
-display: grid; 
-grid-template-columns: 33% 33% 33%; 
-}
+
 .principal {
     background-color: var(--cor-de-fundo);
     background-image: url("background.png");
@@ -48,6 +50,21 @@ grid-template-columns: 33% 33% 33%;
     gap: 1.5rem;
 }
 
+/* Seção Secundária */
+.secundario {
+    flex-direction: row-reverse; /* Inverte a ordem da imagem e texto */
+}
+
+.descricao {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* =========================================
+   3. Tipografia
+   ========================================= */
 .titulo {
     font-size: 2.8rem;
     line-height: 1.2;
@@ -55,27 +72,39 @@ grid-template-columns: 33% 33% 33%;
     letter-spacing: -0.5px;
 }
 
-.conteudo__texto {
+.subtitulo {
     font-size: 1.25rem;
     color: var(--cinza-secundario);
     line-height: 1.6;
 }
 
+.descricao__titulo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.descricao__texto {
+    font-size: 1.1rem;
+    color: var(--cinza-secundario);
+    line-height: 1.6;
+}
+
+.aviso {
+    font-size: 0.85rem;
+    color: var(--cinza-secundario);
+    opacity: 0.8;
+}
+
+/* =========================================
+   4. Botões
+   ========================================= */
 .botoes {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 0.5rem;
 }
-.container__botao {
-background-color: var(--botao-azul); 
-border-radius: 5px; 
-padding: 1em; 
-color: var(--branco-principal); 
-display: block; 
-text-decoration: none;
- }
-/* ---- Botões (uma única declaração limpa) ---- */
+
 .botao {
     display: inline-block;
     padding: 1rem 2rem;
@@ -104,32 +133,24 @@ text-decoration: none;
     color: var(--branco-principal);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.container__aviso { 
-font-size: 12px; 
-color: var(--cinza-secundario); 
-}
-
 
 .botao--secundario:hover {
     border-color: var(--branco-principal);
     background-color: rgba(255, 255, 255, 0.05);
 }
-.container__titulo { 
-font-size: 28px;
-font-weight: 700;
- }
-.aviso {
-    font-size: 0.85rem;
-    color: var(--cinza-secundario);
-    opacity: 0.8;
-}
 
-.imagem img {
+/* =========================================
+   5. Imagens
+   ========================================= */
+.imagem-principal, .secundario img {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
 }
-/* ---- Responsivo ---- */
+
+/* =========================================
+   6. Responsivo
+   ========================================= */
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -143,7 +164,7 @@ font-weight: 700;
         font-size: 2rem;
     }
 
-    .conteudo {
+    .conteudo, .descricao {
         align-items: center;
     }
 
